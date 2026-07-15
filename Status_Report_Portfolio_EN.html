@@ -48,6 +48,7 @@
   .legend-dot.st-blue { background: var(--blue); }
   .legend-dot.st-gray { background: var(--gray); }
   .legend-dot.st-late { background: var(--red); }
+  .th-progress-hint { display:block; font-size:9.5px; text-transform:none; letter-spacing:normal; font-weight:400; color: var(--text-muted); margin-top:2px; }
 
   .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
   .kpi-grid-5 { grid-template-columns: repeat(5, 1fr); }
@@ -186,10 +187,6 @@
         <div class="hint">Click a progress bar to see the phase-by-phase detail</div>
         <a class="lang-switch" href="Status_Report_Portfolio_PT.html">View in Portuguese →</a>
       </div>
-      <div class="legend-box">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9db4b8;width:100%;margin-bottom:2px;">Legend</div>
-        <div class="legend-item"><span class="legend-dot st-green"></span>Completed / Launched</div><div class="legend-item"><span class="legend-dot st-blue"></span>In Progress</div><div class="legend-item"><span class="legend-dot st-gray"></span>Not Started</div><div class="legend-item"><span class="legend-dot st-late"></span>Delayed Step</div>
-      </div>
     </div>
   </header>
 
@@ -205,7 +202,7 @@
           <div class="kpi-label">Portfolio Average Progress</div>
         </div>
         <div class="kpi-card accent-red">
-          <div class="kpi-value">9</div>
+          <div class="kpi-value">13</div>
           <div class="kpi-label">Delayed Projects</div>
         </div>
         <div class="kpi-card accent-blue">
@@ -243,7 +240,7 @@
             <thead>
               <tr>
                 <th class="th-city">City / Unit</th>
-                <th class="th-progress">Progress</th>
+                <th class="th-progress">Progress<span class="th-progress-hint">click for details</span></th>
                 <th class="th-phase">Current Phase</th>
                 <th class="th-status">Status</th>
                 <th class="th-obs">Weekly Update (Jul 3–10)</th>
@@ -354,7 +351,7 @@
           </td>
           <td class="cell-phase">Business Plan Review</td>
           <td class="cell-status"><span class="badge st-blue">In Progress</span></td>
-          <td class="cell-obs"><span class="obs">Property hunting is about to begin, with a 1-week deadline to identify properties for selection.</span></td>
+          <td class="cell-obs"><span class="obs">Alysson has defined the neighborhoods and square footage; the Business Plan has pre-selected the neighborhoods and property hunting will begin within the stipulated deadline.</span></td>
         </tr>
             </tbody>
           </table>
@@ -374,7 +371,7 @@
             <thead>
               <tr>
                 <th class="th-city">City / Unit</th>
-                <th class="th-progress">Progress</th>
+                <th class="th-progress">Progress<span class="th-progress-hint">click for details</span></th>
                 <th class="th-phase">Current Phase</th>
                 <th class="th-status">Status</th>
                 <th class="th-obs">Weekly Update (Jul 3–10)</th>
@@ -393,14 +390,14 @@
               <div class="bar-pct">42%</div>
             </button>
           </td>
-          <td class="cell-phase">Contract Signature</td>
+          <td class="cell-phase">Contract/Hunting</td>
           <td class="cell-status"><span class="badge st-blue">In Progress</span><span class="badge st-late">Late<span class="info-icon" title="Click the progress bar (%) to see which phase is delayed.">i</span></span></td>
           <td class="cell-obs"><span class="obs">Awaiting the signature of the lease agreement.</span></td>
         </tr>
         <tr>
           <td class="cell-city">
             <div class="city-name">Brasília</div>
-            <div class="city-meta">Upgrade Actual &middot; Mário Proll &amp; Adriano Telles</div>
+            <div class="city-meta">New Office &middot; Mário Proll &amp; Adriano Telles</div>
           </td>
           <td class="cell-progress">
             <button class="progress-link" data-modal="modal-p8" type="button" aria-label="Ver detalhes">
@@ -409,8 +406,8 @@
             </button>
           </td>
           <td class="cell-phase">Contract Signature</td>
-          <td class="cell-status"><span class="badge st-blue">In Progress</span></td>
-          <td class="cell-obs"><span class="obs">The office owner (Adriano Telles) requested a new round of property hunting.</span></td>
+          <td class="cell-status"><span class="badge st-blue">In Progress</span><span class="badge st-late">Late<span class="info-icon" title="Click the progress bar (%) to see which phase is delayed.">i</span></span></td>
+          <td class="cell-obs"><span class="obs">Evaluating whether to remain in the current shopping mall unit or move to a new office; the contract is in signature and property hunting is underway for the new office.</span></td>
         </tr>
         <tr>
           <td class="cell-city">
@@ -424,7 +421,7 @@
             </button>
           </td>
           <td class="cell-phase">Approval of the Business Plan &amp; Contract Signature</td>
-          <td class="cell-status"><span class="badge st-blue">In Progress</span></td>
+          <td class="cell-status"><span class="badge st-blue">In Progress</span><span class="badge st-late">Late<span class="info-icon" title="Click the progress bar (%) to see which phase is delayed.">i</span></span></td>
           <td class="cell-obs"><span class="obs">Property selected; the Business Plan will be submitted for approval. The partner opted for the 100% W1 model.</span></td>
         </tr>
         <tr>
@@ -454,8 +451,8 @@
             </button>
           </td>
           <td class="cell-phase">Property Due Diligence by W1</td>
-          <td class="cell-status"><span class="badge st-blue">In Progress</span></td>
-          <td class="cell-obs"><span class="obs">Partner structure defined and property selected; site visit scheduled for July 16th.</span></td>
+          <td class="cell-status"><span class="badge st-blue">In Progress</span><span class="badge st-late">Late<span class="info-icon" title="Click the progress bar (%) to see which phase is delayed.">i</span></span></td>
+          <td class="cell-obs"><span class="obs">Partner structure defined and property selected (27 seats); site visit scheduled for July 16th to validate whether it meets the client's needs.</span></td>
         </tr>
             </tbody>
           </table>
@@ -475,7 +472,7 @@
             <thead>
               <tr>
                 <th class="th-city">City / Unit</th>
-                <th class="th-progress">Progress</th>
+                <th class="th-progress">Progress<span class="th-progress-hint">click for details</span></th>
                 <th class="th-phase">Current Phase</th>
                 <th class="th-status">Status</th>
                 <th class="th-obs">Weekly Update (Jul 3–10)</th>
@@ -510,8 +507,8 @@
             </button>
           </td>
           <td class="cell-phase">Purchase</td>
-          <td class="cell-status"><span class="badge st-blue">In Progress</span></td>
-          <td class="cell-obs"><span class="obs">No update this week. Construction is scheduled for September 5, 2026, plus one additional month for facilities, through October 10, 2026.</span></td>
+          <td class="cell-status"><span class="badge st-blue">In Progress</span><span class="badge st-late">Late<span class="info-icon" title="Click the progress bar (%) to see which phase is delayed.">i</span></span></td>
+          <td class="cell-obs"><span class="obs">Under demolition phase. Construction completion is scheduled for September 5, 2026, plus one additional month for facilities, through October 10, 2026.</span></td>
         </tr>
         <tr>
           <td class="cell-city">
@@ -636,7 +633,7 @@
             <thead>
               <tr>
                 <th class="th-city">City / Unit</th>
-                <th class="th-progress">Progress</th>
+                <th class="th-progress">Progress<span class="th-progress-hint">click for details</span></th>
                 <th class="th-phase">Current Phase</th>
                 <th class="th-status">Status</th>
                 <th class="th-obs">Weekly Update (Jul 3–10)</th>
@@ -1699,7 +1696,7 @@
       </div>
       
       <div class="modal-row"><strong>Current Phase:</strong> Business Plan Review</div>
-      <div class="modal-row"><strong>Weekly Update:</strong> Property hunting is about to begin, with a 1-week deadline to identify properties for selection.</div>
+      <div class="modal-row"><strong>Weekly Update:</strong> Alysson has defined the neighborhoods and square footage; the Business Plan has pre-selected the neighborhoods and property hunting will begin within the stipulated deadline.</div>
       <div class="ph-groups">
           <div class="ph-group">
             <div class="ph-group-title">Viability</div>
@@ -1853,7 +1850,7 @@
         <span class="badge st-blue">In Progress</span>
       </div>
       <div class="late-banner">This project has overdue steps — see the flagged items below.</div>
-      <div class="modal-row"><strong>Current Phase:</strong> Contract Signature</div>
+      <div class="modal-row"><strong>Current Phase:</strong> Contract/Hunting</div>
       <div class="modal-row"><strong>Weekly Update:</strong> Awaiting the signature of the lease agreement.</div>
       <div class="ph-groups">
           <div class="ph-group">
@@ -1999,17 +1996,18 @@
     </template>
     <template id="modal-p8">
       <div class="modal-title">Brasília</div>
-      <div class="modal-meta">Upgrade Actual &middot; Owner: Mário Proll &amp; Adriano Telles</div>
+      <div class="modal-meta">New Office &middot; Owner: Mário Proll &amp; Adriano Telles</div>
       <div class="modal-topline">
         <div class="modal-progress">
           <div class="bar-track"><div class="bar-fill bar-blue" style="width:42%"></div></div>
           <div class="bar-pct">42%</div>
         </div>
-        <span class="badge st-blue">In Progress</span>
+        <span class="badge st-blue">In Progress</span><span class="badge st-late">Late</span>
       </div>
       
+      <div class="late-banner">Delayed step: Contract Signature</div>
       <div class="modal-row"><strong>Current Phase:</strong> Contract Signature</div>
-      <div class="modal-row"><strong>Weekly Update:</strong> The office owner (Adriano Telles) requested a new round of property hunting.</div>
+      <div class="modal-row"><strong>Weekly Update:</strong> Evaluating whether to remain in the current shopping mall unit or move to a new office; the contract is in signature and property hunting is underway for the new office.</div>
       <div class="ph-groups">
           <div class="ph-group">
             <div class="ph-group-title">Viability</div>
@@ -2083,10 +2081,10 @@
                 <span class="ph-name">W1 Due Diligence by Owner<span class="ph-resp">PMO*</span></span>
                 <span class="ph-status">Not Applicable</span>
               </li>
-              <li class="ph-item ph-progress">
+              <li class="ph-item ph-late">
                 <span class="ph-dot"></span>
                 <span class="ph-name">Contract Signature<span class="ph-resp">CFO</span></span>
-                <span class="ph-status">In Progress<span class="ph-note">(TBD)</span></span>
+                <span class="ph-status"><span class="ph-warn">!</span>Late<span class="ph-note">(TBD)</span></span>
               </li></ul>
           </div>
           <div class="ph-group">
@@ -2160,9 +2158,10 @@
           <div class="bar-track"><div class="bar-fill bar-blue" style="width:31%"></div></div>
           <div class="bar-pct">31%</div>
         </div>
-        <span class="badge st-blue">In Progress</span>
+        <span class="badge st-blue">In Progress</span><span class="badge st-late">Late</span>
       </div>
       
+      <div class="late-banner">Delayed step: Contract Signature</div>
       <div class="modal-row"><strong>Current Phase:</strong> Approval of the Business Plan &amp; Contract Signature</div>
       <div class="modal-row"><strong>Weekly Update:</strong> Property selected; the Business Plan will be submitted for approval. The partner opted for the 100% W1 model.</div>
       <div class="ph-groups">
@@ -2238,10 +2237,10 @@
                 <span class="ph-name">W1 Due Diligence by Owner<span class="ph-resp">PMO*</span></span>
                 <span class="ph-status">Not Applicable</span>
               </li>
-              <li class="ph-item ph-progress">
+              <li class="ph-item ph-late">
                 <span class="ph-dot"></span>
                 <span class="ph-name">Contract Signature<span class="ph-resp">CFO</span></span>
-                <span class="ph-status">In Progress<span class="ph-note">(TBD)</span></span>
+                <span class="ph-status"><span class="ph-warn">!</span>Late<span class="ph-note">(TBD)</span></span>
               </li></ul>
           </div>
           <div class="ph-group">
@@ -2470,11 +2469,12 @@
           <div class="bar-track"><div class="bar-fill bar-blue" style="width:34%"></div></div>
           <div class="bar-pct">34%</div>
         </div>
-        <span class="badge st-blue">In Progress</span>
+        <span class="badge st-blue">In Progress</span><span class="badge st-late">Late</span>
       </div>
       
+      <div class="late-banner">Delayed step: Office Creation Winner</div>
       <div class="modal-row"><strong>Current Phase:</strong> Property Due Diligence by W1</div>
-      <div class="modal-row"><strong>Weekly Update:</strong> Partner structure defined and property selected; site visit scheduled for July 16th.</div>
+      <div class="modal-row"><strong>Weekly Update:</strong> Partner structure defined and property selected (27 seats); site visit scheduled for July 16th to validate whether it meets the client's needs.</div>
       <div class="ph-groups">
           <div class="ph-group">
             <div class="ph-group-title">Viability</div>
@@ -2514,10 +2514,10 @@
                 <span class="ph-name">Approval of the Business Plan<span class="ph-resp">CSO / CEO</span></span>
                 <span class="ph-status">Completed</span>
               </li>
-              <li class="ph-item ph-progress">
+              <li class="ph-item ph-late">
                 <span class="ph-dot"></span>
                 <span class="ph-name">Office Creation Winner<span class="ph-resp">Data Area</span></span>
-                <span class="ph-status">In Progress<span class="ph-note">(TBD)</span></span>
+                <span class="ph-status"><span class="ph-warn">!</span>Late<span class="ph-note">(TBD)</span></span>
               </li>
               <li class="ph-item ph-progress">
                 <span class="ph-dot"></span>
@@ -2780,11 +2780,12 @@
           <div class="bar-track"><div class="bar-fill bar-blue" style="width:51%"></div></div>
           <div class="bar-pct">51%</div>
         </div>
-        <span class="badge st-blue">In Progress</span>
+        <span class="badge st-blue">In Progress</span><span class="badge st-late">Late</span>
       </div>
       
+      <div class="late-banner">Delayed step: Purchase</div>
       <div class="modal-row"><strong>Current Phase:</strong> Purchase</div>
-      <div class="modal-row"><strong>Weekly Update:</strong> No update this week. Construction is scheduled for September 5, 2026, plus one additional month for facilities, through October 10, 2026.</div>
+      <div class="modal-row"><strong>Weekly Update:</strong> Under demolition phase. Construction completion is scheduled for September 5, 2026, plus one additional month for facilities, through October 10, 2026.</div>
       <div class="ph-groups">
           <div class="ph-group">
             <div class="ph-group-title">Viability</div>
@@ -2877,10 +2878,10 @@
                 <span class="ph-name">End-to-End Integrated Schedule<span class="ph-resp">PMO</span></span>
                 <span class="ph-status">Completed</span>
               </li>
-              <li class="ph-item ph-progress">
+              <li class="ph-item ph-late">
                 <span class="ph-dot"></span>
                 <span class="ph-name">Purchase<span class="ph-resp">CFO</span></span>
-                <span class="ph-status">In Progress<span class="ph-note">(30/09/2026)</span></span>
+                <span class="ph-status"><span class="ph-warn">!</span>Late<span class="ph-note">(30/09/2026)</span></span>
               </li>
               <li class="ph-item ph-pending">
                 <span class="ph-dot"></span>
