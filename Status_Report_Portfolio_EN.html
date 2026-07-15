@@ -5121,4 +5121,47 @@
 
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal-box" role="dialog" aria-modal="true">
-      <button clas
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var overlay = document.getElementById('modalOverlay');
+    var content = document.getElementById('modalContent');
+    var closeBtn = overlay.querySelector('.modal-close');
+
+    function openModal(id) {
+      var tpl = document.getElementById(id);
+      if (!tpl) return;
+      content.innerHTML = '';
+      content.appendChild(tpl.content.cloneNode(true));
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      content.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.progress-link').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var modalId = btn.getAttribute('data-modal');
+        openModal(modalId);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+  })();
+  </script>
+</body>
+</html>
