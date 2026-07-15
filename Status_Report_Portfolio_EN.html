@@ -175,6 +175,28 @@
     .modal-box { padding: 22px 18px 24px; }
     .category-header { flex-direction: column; align-items: flex-start; }
   }
+
+  @media print {
+    @page { size: A4 landscape; margin: 10mm; }
+    body { font-size: 12px; }
+    .wrap { max-width: 100%; padding: 0 6px 20px; }
+    .hint, .lang-switch, .th-progress-hint, .footer-hint { display: none; }
+    table { min-width: 0; }
+    thead th { padding: 6px 8px; font-size: 8.5px; }
+    tbody td { padding: 7px 8px; font-size: 9.5px; }
+    .th-city, .cell-city { width: 15%; }
+    .th-progress, .cell-progress { width: 9%; }
+    .th-phase, .cell-phase { width: 15%; }
+    .th-status, .cell-status { width: 10%; }
+    .th-obs, .cell-obs { width: 51%; }
+    thead { display: table-header-group; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+    .hl-card { break-inside: avoid; page-break-inside: avoid; }
+    .category { overflow: visible; border-radius: 0; box-shadow: none; }
+    .table-wrap { overflow-x: visible; }
+    .kpi-grid-5 { grid-template-columns: repeat(5, 1fr); }
+    .hl-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -750,7 +772,7 @@
           </table>
           </div>
         </section>
-    <footer>Report automatically generated from the "20260707_Status_Report_Offices_v00" spreadsheet (Google Sheets) — W1. Click a project's progress bar to see the full phase checklist.</footer>
+    <footer>Report automatically generated from the "20260713_Status_Report_Offices_v00" spreadsheet (Google Sheets) — W1.<span class="footer-hint"> Click a project's progress bar to see the full phase checklist.</span></footer>
   </div>
 
   
@@ -5110,22 +5132,4 @@
     (function() {
       var overlay = document.getElementById('modalOverlay');
       var body = document.getElementById('modalBody');
-      var closeBtn = document.getElementById('modalClose');
-      document.querySelectorAll('.progress-link').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var id = btn.getAttribute('data-modal');
-          var tpl = document.getElementById(id);
-          if (!tpl) return;
-          body.innerHTML = '';
-          body.appendChild(tpl.content.cloneNode(true));
-          overlay.classList.add('open');
-        });
-      });
-      function closeModal() { overlay.classList.remove('open'); }
-      closeBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
-    })();
-  </script>
-</body>
-</html>
+      var closeBtn = document.getEl
